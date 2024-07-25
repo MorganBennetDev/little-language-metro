@@ -15,6 +15,8 @@ def get_city_names():
         if not isinstance(city, str) or not isinstance(country, str):
             continue
 
+        city = city + '<eos>'
+
         big_data.append(city)
 
         if country in datasets:
