@@ -1,6 +1,7 @@
 from transformers import pipeline
 
 import random
+import math
 
 fill_mask = pipeline(
     'fill-mask',
@@ -14,12 +15,12 @@ def next_token(past, k = 20):
     total = 0.0
 
     for guess in tokens:
-        total += guess['score']
+        total += math.exp(guess['score'])
 
     choice = random.uniform(0.0, total)
 
     for guess in tokens:
-        choice -= guess['score']
+        choice -= math.exp(guess['score'])
 
         if choice <= 0:
             return guess
