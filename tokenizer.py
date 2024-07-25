@@ -20,4 +20,4 @@ tokenizer.train_from_iterator(
     ]
 )
 
-tokenizer.save_model('./models/tokenton', 'tokenton')
+tokenizer.save_model('./models/tokenton')
