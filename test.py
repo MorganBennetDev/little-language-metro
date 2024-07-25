@@ -6,4 +6,4 @@ fill_mask = pipeline(
     tokenizer = './models/reginald-tokens'
 )
 
-print(fill_mask(input()))
+print(fill_mask(input() + "<mask>"))
