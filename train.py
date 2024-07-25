@@ -12,6 +12,8 @@ from transformers import RobertaTokenizerFast
 
 tokenizer = RobertaTokenizerFast.from_pretrained('./models/tokenton', max_len = 512)
 
+tokenizer.save_pretrained('./models/reginald-tokens')
+
 from transformers import RobertaForMaskedLM
 
 model = RobertaForMaskedLM(config = config)
