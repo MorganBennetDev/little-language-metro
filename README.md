@@ -1,2 +1,2 @@
 # little-language-metro
-Language model for generating city names. Based on [this tutorial](https://huggingface.co/blog/how-to-train). City names from this list of [all cities with more than 1,000 people](https://public.opendatasoft.com/explore/dataset/geonames-all-cities-with-a-population-1000/)
+Language model for generating city names. Based on [this tutorial](https://huggingface.co/blog/how-to-train) and [this one](https://huggingface.co/docs/transformers/en/tasks/language_modeling). City names from this list of [all cities with more than 1,000 people](https://public.opendatasoft.com/explore/dataset/geonames-all-cities-with-a-population-1000/)

@@ -8,15 +8,15 @@ config = RobertaConfig(
     type_vocab_size = 1
 )
 
-from transformers import RobertaTokenizerFast
+from transformers import RobertaTokenizer
 
-tokenizer = RobertaTokenizerFast.from_pretrained('./models/tokenton', max_len = 512)
+tokenizer = RobertaTokenizer.from_pretrained('./models/tokenton', max_len = 512)
 
 tokenizer.save_pretrained('./models/reginald-tokens')
 
-from transformers import RobertaForMaskedLM
+from transformers import RobertaForCausalLM
 
-model = RobertaForMaskedLM(config = config)
+model = RobertaForCausalLM(config = config)
 
 from dataset import CityDataset
 from transformers import DataCollatorForLanguageModeling

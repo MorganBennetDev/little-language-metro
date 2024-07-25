@@ -1,36 +1,13 @@
-from transformers import pipeline
+from transformers import AutoTokenizer
 
-import random
-import math
+prompt = input('Start of name: ')
 
-fill_mask = pipeline(
-    'fill-mask',
-    model = './models/reginald',
-    tokenizer = './models/reginald-tokens'
-)
+tokenizer = AutoTokenizer.from_pretrained('./models/reginald-tokens')
+inputs = tokenizer(prompt, return_tensors = 'pt').input_ids
 
-def next_token(past, k = 20):
-    tokens = fill_mask(past + '<mask>', top_k = k)
+from transformers import AutoModelForCausalLM
 
-    total = 0.0
+model = AutoModelForCausalLM.from_pretrained('./models/reginald')
+outputs = model.generate(inputs, max_new_tokens = 10, do_sample = True, top_k = 50, top_p = 0.95, num_beams = 5, eos_token_id = model.config.eos_token_id)
 
-    for guess in tokens:
-        total += math.exp(guess['score'])
-
-    choice = random.uniform(0.0, total)
-
-    for guess in tokens:
-        choice -= math.exp(guess['score'])
-
-        if choice <= 0:
-            return guess
-        
-    return tokens[-1]
-
-
-current = ''
-
-while True:
-    current = current + next_token(current)['token_str']
-    print(current)
-    input()
+print(tokenizer.batch_decode(outputs, skip_special_tokens = True))
