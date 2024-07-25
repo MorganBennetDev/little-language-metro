@@ -22,10 +22,10 @@ class CityDataset(Dataset):
 
         _, names = get_city_names()
 
-        self.examples = [ x.ids for x in tokenizer.encode_batch(names) ]
+        self.examples = [ torch.tensor(x.ids) for x in tokenizer.encode_batch(names) ]
 
     def __len__(self):
         return len(self.examples)
     
     def __getitem__(self, i):
-        return torch.tensor(self.examples[i])
+        return self.examples[i]

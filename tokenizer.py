@@ -12,7 +12,6 @@ tokenizer.train_from_iterator(
     vocab_size = 20_000,
     min_frequency = 2,
     special_tokens = [
-        '<eos>',
         '<s>',
         '<pad>',
         '</s>',

@@ -1,7 +1,7 @@
 {
   "add_prefix_space": false,
   "added_tokens_decoder": {
-    "1": {
+    "0": {
       "content": "<s>",
       "lstrip": false,
       "normalized": true,
@@ -9,7 +9,7 @@
       "single_word": false,
       "special": true
     },
-    "2": {
+    "1": {
       "content": "<pad>",
       "lstrip": false,
       "normalized": true,
@@ -17,7 +17,7 @@
       "single_word": false,
       "special": true
     },
-    "3": {
+    "2": {
       "content": "</s>",
       "lstrip": false,
       "normalized": true,
@@ -25,7 +25,7 @@
       "single_word": false,
       "special": true
     },
-    "4": {
+    "3": {
       "content": "<unk>",
       "lstrip": false,
       "normalized": true,
@@ -33,7 +33,7 @@
       "single_word": false,
       "special": true
     },
-    "5": {
+    "4": {
       "content": "<mask>",
       "lstrip": true,
       "normalized": false,
