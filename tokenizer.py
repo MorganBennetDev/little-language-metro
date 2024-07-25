@@ -13,6 +13,9 @@ tokenizer.train_from_iterator(
     min_frequency = 2,
     special_tokens = [
         '<eos>',
+        '<s>',
+        '<pad>',
+        '</s>',
         '<unk>',
         '<mask>'
     ]
