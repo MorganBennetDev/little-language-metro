@@ -10,6 +10,7 @@ def get_city_names():
 
     for _, row in cities_df.iterrows():
         country = row['Country name EN']
+
         city = row['Name']
 
         if not isinstance(city, str) or not isinstance(country, str):

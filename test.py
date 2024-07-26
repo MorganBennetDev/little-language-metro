@@ -8,6 +8,6 @@ inputs = tokenizer(prompt, return_tensors = 'pt').input_ids
 from transformers import AutoModelForCausalLM
 
 model = AutoModelForCausalLM.from_pretrained('./models/reginald')
-outputs = model.generate(inputs, max_new_tokens = 10, do_sample = True, top_k = 50, top_p = 0.95, num_beams = 5, eos_token_id = model.config.eos_token_id)
+outputs = model.generate(inputs, max_new_tokens = 10, do_sample = True, top_k = 50, top_p = 0.5, num_beams = 3, eos_token_id = model.config.eos_token_id)
 
 print(tokenizer.batch_decode(outputs, skip_special_tokens = True))
